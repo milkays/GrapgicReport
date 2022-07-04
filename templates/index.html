@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Say Hello</title>
+</head>
+
+<body>
+    <center><img src="{{logo}}" width="450" height="250"></center>
+    <br>
+    <center>
+        <!-- <form method="POST" enctype="multipart/form-data">
+            {{form.hidden_tag()}} {{form.file()}} {{form.submit()}}
+        </form> -->
+        <form action="/columnas" method="post" enctype="multipart/form-data" <>
+            <input type="file" name="file">
+            <input type="submit" value="Cargar">
+        </form>
+    </center>
+    <right>
+        <form action="/show_data" target="_blank">
+            <input type="submit" value="Show CSV" />
+        </form>
+    </right>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+<style>
+    input[type=button],
+    input[type=submit],
+    input[type=reset] {
+        background-color: #2e2e2c;
+        border-style: outset;
+        color: white;
+        padding: 20px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        align-content: center;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Say Hello</title>
+</head>
+
+<body>
+    <center><img src="{{logo}}" width="450" height="250"></center>
+    <br>
+    <form action="/graphic" method="post" enctype="multipart/form-data">
+
+        <div class="col-left">
+            <h2>Selecciona la columna</h2>
+            {% for columna in columnas.columnas %}
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="columna" id="exampleRadios1" value="{{ columna }}" checked required>
+                <label class="form-check-label" for="exampleRadios1">
+                {{ columna }}
+            </label>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-left">
+            <h2>Selecciona la columna</h2>
+            {% for columna1 in columnas.columnas %}
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="columna1" id="exampleRadios1" value="{{ columna1 }}" checked required>
+                <label class="form-check-label" for="exampleRadios1">
+                {{ columna1 }}
+            </label>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-right">
+            <h2>Selecciona la grafica</h2>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tipo" id="inlineRadio1" value="Scatter" required>
+                <label class="form-check-label" for="inlineRadio1">Scatter</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tipo" id="inlineRadio1" value="barras" required>
+                <label class="form-check-label" for="inlineRadio1">Barras</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tipo" id="inlineRadio1" value="barrasY" required>
+                <label class="form-check-label" for="inlineRadio1">Barras Y</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tipo" id="inlineRadio2" value="lineal" required>
+                <label class="form-check-label" for="inlineRadio2">Lineal 2 features</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tipo" id="inlineRadio3" value="pie" required>
+                <label class="form-check-label" for="inlineRadio3">pastel</label>
+            </div>
+        </div>
+        <br>
+        <div class="col-left">
+            <input type="text" value="{{ columnas.filename }}" name="filename" hidden>
+            <input type="submit" style="position:relative; left:80px; top:2px;" value="graphic" class="btn btn-success">
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+.col-left {
+    width: 50%;
+    float: left;
+}
+
+.col-right {
+    width: 25%;
+    float: right;
+}
+
+form {
+    display: flex;
+}
+
+.clearfix {
+    clear: both;
+}
